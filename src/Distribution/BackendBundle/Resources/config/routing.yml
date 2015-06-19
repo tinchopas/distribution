@@ -1,0 +1,3 @@
+distribution_backend_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: DistributionBackendBundle:Default:index }

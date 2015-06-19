@@ -1,0 +1,32 @@
+# Distribution/BackendBundle/Resources/config/admin.yml
+services:
+    sonata.admin.post:
+        class: Distribution\BackendBundle\Admin\PostAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Post" }
+        arguments:
+            - ~
+            - Distribution\BackendBundle\Entity\Post
+            - ~
+        calls:
+            - [ setTranslationDomain, [DistributionBackendBundle]]
+    sonata.admin.item:
+        class: Distribution\BackendBundle\Admin\ItemAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Item" }
+        arguments:
+            - ~
+            - Distribution\BackendBundle\Entity\Item
+            - ~
+        calls:
+            - [ setTranslationDomain, [DistributionBackendBundle]]
+    sonata.admin.category:
+        class: Distribution\BackendBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Category" }
+        arguments:
+            - ~
+            - Distribution\BackendBundle\Entity\Category
+            - ~
+        calls:
+            - [ setTranslationDomain, [DistributionBackendBundle]]
